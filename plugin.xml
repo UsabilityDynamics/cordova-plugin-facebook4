@@ -19,6 +19,8 @@
 
     <preference name="APP_ID" />
     <preference name="APP_NAME" />
+    <preference name="BUNDLE_ID" />
+    <preference name="SUFFIX" default="" />
 
     <engines>
         <!-- Requires > 3.5.0 because of the custom Framework tag for iOS [CB-6698] -->
@@ -100,9 +102,11 @@
         <config-file target="*-Info.plist" parent="CFBundleURLTypes">
           <array>
             <dict>
+              <key>CFBundleURLName</key>
+              <string>$BUNDLE_ID</string>
               <key>CFBundleURLSchemes</key>
               <array>
-                <string>fb$APP_ID</string>
+                <string>fb$APP_ID$SUFFIX</string>
               </array>
             </dict>
           </array>
